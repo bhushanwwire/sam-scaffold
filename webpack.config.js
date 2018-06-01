@@ -28,7 +28,7 @@ module.exports = function (env) {
                                     presets: ['es2015'],
                                     plugins: ["transform-async-to-generator"],
                                     compact: false,
-                                    babelrc: false
+                                    babelrc: true
                                 }
                             }
                         ]
