@@ -13,7 +13,7 @@ phases:
     commands:
       # env var BUILD_ARTIFACT_BUCKET is defined in ci.yaml
       - aws cloudformation package
-         --template-file infrastructure/sam.yaml
+         --template-file sam.yaml
          --s3-bucket cicddemo-lambda-pipeline
          --output-template-file SamDeploymentTemplate.yaml
 artifacts:
