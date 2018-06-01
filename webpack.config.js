@@ -11,7 +11,9 @@ module.exports = function (env) {
         .map(fxn => ({
             mode: 'production',
             context: path.resolve(__dirname),
-            entry: path.join(lambdaFunctionDir, fxn, 'index.js'),
+            //entry: path.join(lambdaFunctionDir, fxn, 'index.js'),
+            entry: ["babel-polyfill", path.join(lambdaFunctionDir, fxn, 'index.js')],
+
             output: {
                 path: path.join(__dirname, 'dist', fxn),
                 filename: 'index.js',
