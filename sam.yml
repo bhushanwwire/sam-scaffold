@@ -7,7 +7,7 @@ Resources:
   HelloWorldFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: ./dist/helloWorld.js
+      CodeUri: ./dist/helloworld.js
       Handler: index.handler
       Runtime: nodejs8.10
       MemorySize: 128
