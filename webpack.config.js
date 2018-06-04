@@ -44,7 +44,7 @@ module.exports = {
     },
     plugins: [
         new ZipPlugin({
-            path: 'zip',
+            //path: 'zip',
             pathPrefix: '',
             filename: `[name].zip`
         })
