@@ -42,13 +42,13 @@ module.exports = {
         minimize: false,
         namedModules: true
     },
-    /*plugins: [
+    plugins: [
         new ZipPlugin({
-            //path: 'zip',
+            path: path.join(__dirname, 'dist'),
             pathPrefix: '',
             filename: `[name].zip`
         })
-    ],*/
+    ],
     target: 'node',
     externals: {
         // These modules are already installed on the Lambda instance.
