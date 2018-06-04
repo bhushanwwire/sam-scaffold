@@ -6,8 +6,8 @@ module.exports = {
 
     //entry: path.join(lambdaFunctionDir, fxn, 'index.js'),
     entry: {
-       helloworld : ['babel-polyfill', './src/lambdas/helloWorld/index.js'],
-       robots : ['babel-polyfill', './src/lambdas/robots/index.js']
+        helloworld: ['babel-polyfill', './src/lambdas/helloWorld/index.js'],
+        robots: ['babel-polyfill', './src/lambdas/robots/index.js']
     },
     output: {
         path: path.join(__dirname, 'dist'),
@@ -57,11 +57,6 @@ module.exports = {
         'dynamodb-doc': 'dynamodb-doc',
         'imagemagick': 'imagemagick'
     },
-    node: {
-        // Allow these globals.
-        __filename: false,
-        __dirname: false
-    },
     stats: 'errors-only',
     bail: true
-};
+}
