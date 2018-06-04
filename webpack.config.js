@@ -46,7 +46,7 @@ module.exports = {
         new ZipPlugin({
             path: path.join(__dirname, 'dist'),
             pathPrefix: '',
-            filename: `[name]/[name].zip`
+            filename: `robots/robots.zip`
         })
     ],
     target: 'node',
