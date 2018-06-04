@@ -11,7 +11,7 @@ module.exports = {
     },
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: 'index.js',
+        filename: '[name]/index.js',
         libraryTarget: 'commonjs2'
     },
     module: {
@@ -42,13 +42,13 @@ module.exports = {
         minimize: false,
         namedModules: true
     },
-    plugins: [
+    /*plugins: [
         new ZipPlugin({
             //path: 'zip',
             pathPrefix: '',
             filename: `[name].zip`
         })
-    ],
+    ],*/
     target: 'node',
     externals: {
         // These modules are already installed on the Lambda instance.
