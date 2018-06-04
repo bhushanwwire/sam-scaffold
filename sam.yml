@@ -7,7 +7,7 @@ Resources:
   HelloWorldFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: ./dist/helloWorld.js
+      CodeUri: ./dist/helloWorld.zip
       Handler: index.handler
       Runtime: nodejs8.10
       MemorySize: 128
@@ -15,7 +15,7 @@ Resources:
   RobotsFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: ./dist/robots.js
+      CodeUri: ./dist/robots.zip
       Handler: index.handler
       Runtime: nodejs8.10
       MemorySize: 128
