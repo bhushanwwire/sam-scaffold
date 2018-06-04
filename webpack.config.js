@@ -6,8 +6,8 @@ module.exports = {
 
     //entry: path.join(lambdaFunctionDir, fxn, 'index.js'),
     entry: {
-       helloworld : ["babel-polyfill", path.join(__dirname,'src/lambdas/helloWorld/index.js')],
-       robots : ["babel-polyfill", path.join(__dirname,'src/lambdas/robots/index.js')]
+       helloworld : ['babel-polyfill', './src/lambdas/helloWorld/index.js'],
+       robots : ['babel-polyfill', './src/lambdas/robots/index.js']
     },
     output: {
         path: path.join(__dirname, 'dist'),
