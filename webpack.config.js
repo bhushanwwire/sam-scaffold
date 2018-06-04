@@ -10,7 +10,7 @@ module.exports = {
        robots : ["babel-polyfill", path.join(__dirname,'src/lambdas/robots/index.js')]
     },
     output: {
-        path: path.join(__dirname, 'dist',[name]),
+        path: path.join(__dirname, 'dist','[name]'),
         filename: '[name].js',
         libraryTarget: 'commonjs2'
     },
@@ -44,7 +44,7 @@ module.exports = {
     },
     plugins: [
         new ZipPlugin({
-            path: path.join(__dirname, 'dist',[name]),
+            path: path.join(__dirname, 'dist','[name]'),
             pathPrefix: '',
             filename: `[name].zip`
         })
