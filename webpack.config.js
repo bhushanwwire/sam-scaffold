@@ -59,4 +59,4 @@ module.exports = {
     },
     stats: 'errors-only',
     bail: true
-}
+};
