@@ -3,13 +3,20 @@
 AWSTemplateFormatVersion: 2010-09-09
 Transform: AWS::Serverless-2016-10-31
 Description: Example project
-Resources:
 
+Globals:
+  Function:
+    Runtime: nodejs8.10
+    Timeout: 180    
+    Environment:
+      Variables:
+        DeploymentStageName: development
+Resources:
 # Cognito Auth Services API
   ServicesAPIs:
     Type: AWS::Serverless::Api    
     Properties:
-      StageName: ${DeployStageName}
+      StageName: ${DeploymentStageName}
       DefinitionBody:
         swagger: 2.0
         info:
