@@ -24,5 +24,6 @@ Resources:
         RestApi:
           Type: Api
           Properties:
+            StageName: dev
             Path: /{proxy+}
             Method: ANY
