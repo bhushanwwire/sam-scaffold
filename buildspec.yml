@@ -1,4 +1,9 @@
 version: 0.1
+env:
+  variables:
+    DeployStageName: "dev"
+    S3BucketName: "cicddemo-lambda-pipeline"
+
 phases:
   install:
     commands:
@@ -14,7 +19,7 @@ phases:
       # env var BUILD_ARTIFACT_BUCKET is defined in ci.yaml
       - aws cloudformation package
          --template-file sam.yml
-         --s3-bucket cicddemo-lambda-pipeline
+         --s3-bucket $(S3BucketName)
          --output-template-file SamDeploymentTemplate.yml
 artifacts:
   type: zip
