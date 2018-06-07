@@ -9,7 +9,7 @@ Resources:
   ServicesAPIs:
     Type: AWS::Serverless::Api    
     Properties:
-      StageName: dev
+      StageName: ${DeployStageName}
       DefinitionBody:
         swagger: 2.0
         info:

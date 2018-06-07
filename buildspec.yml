@@ -1,7 +1,7 @@
 version: 0.1
 env:
   variables:
-    DeployStageName: "dev"
+    DeployStageName: $(DeployStageName)
     S3BucketName1: "cicddemo-lambda-pipeline"
 
 phases:
