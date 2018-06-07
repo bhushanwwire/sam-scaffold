@@ -16,7 +16,7 @@ Resources:
   ServicesAPIs:
     Type: AWS::Serverless::Api    
     Properties:
-      StageName: ${DeploymentStageName}
+      StageName: !Ref DeploymentStageName
       DefinitionBody:
         swagger: 2.0
         info:
