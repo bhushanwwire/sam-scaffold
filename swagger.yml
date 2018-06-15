@@ -2,39 +2,39 @@ swagger: 2.0
 info:
     title: Services APIs                            
 paths:
-    "/HelloWorldFunction":
+  "/HelloWorldFunction":
     post:
-        x-amazon-apigateway-integration:
+      x-amazon-apigateway-integration:
         httpMethod: post
         type: aws_proxy
         uri:
-            Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${stageVariables.HelloWorldFunction}/invocations
+          Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${stageVariables.HelloWorldFunction}/invocations
         responses:
-            default:
+          default:
             statusCode: '200'
         passthroughBehavior: when_no_match              
-        produces:
-        - application/json
-        responses:
+      produces:
+      - application/json
+      responses:
         '200':
-            description: 200 response
-            schema:
+          description: 200 response
+          schema:
             "$ref": "#/definitions/Empty"
-    "/RobotsFunction":
+  "/RobotsFunction":
     post:
-        x-amazon-apigateway-integration:
+      x-amazon-apigateway-integration:
         httpMethod: post
         type: aws_proxy
         uri:
-            Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${stageVariables.RobotsFunction}/invocations
+          Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${stageVariables.RobotsFunction}/invocations
         responses:
-            default:
+          default:
             statusCode: '200'
         passthroughBehavior: when_no_match              
-        produces:
-        - application/json
-        responses:
+      produces:
+      - application/json
+      responses:
         '200':
-            description: 200 response
-            schema:
+          description: 200 response
+          schema:
             "$ref": "#/definitions/Empty"
