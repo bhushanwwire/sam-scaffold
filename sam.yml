@@ -16,7 +16,8 @@ Resources:
   ServicesAPIs:
     Type: AWS::Serverless::Api    
     Properties:
-      StageName: !Ref DeploymentStageName
+      # StageName: !Ref DeploymentStageName
+      StageName: development
       DefinitionUri: swagger.yml
       Variables:
         HelloWorldFunction: !Ref HelloWorldFunction
