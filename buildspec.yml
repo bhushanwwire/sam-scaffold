@@ -10,6 +10,7 @@ phases:
   build:
     commands:
       - npm run build
+      - npm run test
   post_build:
     commands:
       # env var BUILD_ARTIFACT_BUCKET is defined in ci.yaml
