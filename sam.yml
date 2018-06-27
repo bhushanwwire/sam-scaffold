@@ -17,53 +17,51 @@ Resources:
     Type: AWS::Serverless::Api    
     Properties:
       # StageName: !Ref DeploymentStageName
-      StageName: development
-      DefinitionUri: swagger.yml
+      StageName: development      
       Variables:
         HelloWorldFunction: !Ref HelloWorldFunction
         RobotsFunction: !Ref RobotsFunction
-
-      # DefinitionBody:
-      #   swagger: 2.0
-      #   info:
-      #     title: Services APIs                            
-      #   paths:
-      #     "/HelloWorldFunction":
-      #       post:
-      #         x-amazon-apigateway-integration:
-      #           httpMethod: post
-      #           type: aws_proxy
-      #           uri:
-      #             Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${HelloWorldFunction.Arn}/invocations
-      #           responses:
-      #             default:
-      #               statusCode: '200'
-      #           passthroughBehavior: when_no_match              
-      #         produces:
-      #         - application/json
-      #         responses:
-      #           '200':
-      #             description: 200 response
-      #             schema:
-      #               "$ref": "#/definitions/Empty"
-      #     "/RobotsFunction":
-      #       post:
-      #         x-amazon-apigateway-integration:
-      #           httpMethod: post
-      #           type: aws_proxy
-      #           uri:
-      #             Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${RobotsFunction.Arn}/invocations
-      #           responses:
-      #             default:
-      #               statusCode: '200'
-      #           passthroughBehavior: when_no_match              
-      #         produces:
-      #         - application/json
-      #         responses:
-      #           '200':
-      #             description: 200 response
-      #             schema:
-      #               "$ref": "#/definitions/Empty"
+      DefinitionBody:
+        swagger: 2.0
+        info:
+          title: Services APIs                            
+        paths:
+          "/HelloWorldFunction":
+            post:
+              x-amazon-apigateway-integration:
+                httpMethod: post
+                type: aws_proxy
+                uri:
+                  Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${HelloWorldFunction.Arn}/invocations
+                responses:
+                  default:
+                    statusCode: '200'
+                passthroughBehavior: when_no_match              
+              produces:
+              - application/json
+              responses:
+                '200':
+                  description: 200 response
+                  schema:
+                    "$ref": "#/definitions/Empty"
+          "/RobotsFunction":
+            post:
+              x-amazon-apigateway-integration:
+                httpMethod: post
+                type: aws_proxy
+                uri:
+                  Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${RobotsFunction.Arn}/invocations
+                responses:
+                  default:
+                    statusCode: '200'
+                passthroughBehavior: when_no_match              
+              produces:
+              - application/json
+              responses:
+                '200':
+                  description: 200 response
+                  schema:
+                    "$ref": "#/definitions/Empty"
 
   HelloWorldFunction:
     Type: AWS::Serverless::Function
